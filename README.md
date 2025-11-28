@@ -63,6 +63,14 @@ We use the OpenRouter API as default and you can use `--api-key` flag to pass yo
 
 Any provider compatible with OpenAI API is accepted and you can use local models too.
 
+## Security and Privacy
+
+This code base never passes your code base or any metadata to the Rokovo servers. which is verifiable by looking at the code. Only the LLM provider would access the code base which we explain about it:
+
+If you are using a local LLM, then your code won't be accessed by any cloud AI provider which is obvious. If you are using a LLM provider like OpenAI, then they have access to files that your agent reads and to find out what exactly happens to your data in this case, you can to read the provider privacy policy and check their configs to find out since each provider can have different rules and policies.
+
+If you are worried about secret files or specific directories, you can use `.rokovoignore` to ignore and exclude this files which will remove the file/directory from agents access and it can't read it by any chance.
+
 ## License
 
 MIT License - see [LICENSE](./LICENSE).
